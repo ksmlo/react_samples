@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.modal {
+  position: absolute;
+  top: 4rem;
+  left: calc((8% - 4rem) / 2);
+  width: 92%;
+  padding: 4rem 2rem;
+  background-color: $white-color;
+  z-index: 99;
+}

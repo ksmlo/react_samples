@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+//variables
+@import "./variables/color.scss";
+@import "./variables/size.scss";
+
+// setting
+@import "./setting/font.scss";
+@import "./setting/global.scss";
+
+//base
+@import "./base/font.scss";
+
+//components
+@import "./components/index.scss";
+@import "./components/header.scss";
+
+//page
+@import "./components/switch.scss";
+@import "./components/counter.scss";
+@import "./components/list.scss";
+@import "./components/table.scss";
+@import "./components/pagination.scss";
+@import "./components/routing.scss";
+@import "./components/ticker.scss";
+@import "./components/carousel.scss";
+@import "./components/calendar.scss";
+@import "./components/memo.scss";

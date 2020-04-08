@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+html {
+  font-size: $global-base-size;
+}
+
+ul,
+ol {
+  li {
+    list-style-type: none;
+  }
+}

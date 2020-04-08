@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+body {
+  background-color: $dark-color;
+  font-size: 1.6rem;
+  color: $dark-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  .main {
+    background-color: $white-color;
+    width: calc(95% - 8rem);
+    margin: 1rem auto 0;
+    padding: 2rem 4rem;
+    border-radius: 1rem;
+  }
+}
+
+section{
+  .title{
+    font-size: 2.2rem;
+    border-bottom: 1px solid $dark-color;
+  }
+}

@@ -1,1 +1,35 @@
 @charset "UTF-8";
+
+.pagination {
+  ul {
+    display: flex;
+    .btn-circle {
+      position: relative;
+      width: 1.6rem;
+      height: 1.6rem;
+      margin-left: 0.8rem;
+      padding: 1.2rem;
+      border-radius: 50%;
+      background-color: $dark-color;
+      color: $white-color;
+      font-size: 1.6rem;
+      font-weight: bold;
+      text-align: center;
+      vertical-align: middle;
+      cursor: pointer;
+      transition: background-color 0.25s;
+      &:hover {
+        background-color: rgba($dark-color, 0.6);
+      }
+      &.active {
+        color: $dark-color;
+        background-color: rgba($dark-color, 0.4);
+      }
+      .material-icons {
+        position: absolute;
+        top: 0.8rem;
+        left: 0.8rem;
+      }
+    }
+  }
+}

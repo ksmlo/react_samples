@@ -1,16 +1,25 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { Link, withRouter } from "react-router-dom"
+import ClassNames from "classnames"
 
 import { ROUTE } from "../route/index"
 
-export const Header = () => {
+export const Header = withRouter(({ location }) => {
+  console.log(location)
   return (
     <header>
       <ul>
         {ROUTE.map((pathList, i) => (
-          <li key={i}><Link to={pathList.path}>{pathList.title}</Link></li>
+          <li
+            key={i}
+            className={ClassNames({
+              active: location.pathname === pathList.path,
+            })}
+          >
+            <Link to={pathList.path}>{pathList.title}</Link>
+          </li>
         ))}
       </ul>
     </header>
   )
-}
+})

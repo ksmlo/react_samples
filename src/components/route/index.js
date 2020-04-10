@@ -14,12 +14,8 @@ import { Carousel } from "../pages/carousel"
 import { Calendar } from "../pages/calendar"
 import { Memo } from "../pages/memolize"
 
-const Test = () => {
-  return <div />
-}
-
 export const ROUTE = [
-  { title: "TOP", path: "/", component: Index },
+  { title: "TOP", path: "/", component: Index, exact: true },
   { title: "切替ボタン", path: "/switch", component: Switch },
   { title: "カウンター", path: "/counter", component: Counter },
   { title: "プロップス", path: "/props", component: Props },

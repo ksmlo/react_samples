@@ -1,1 +1,37 @@
 @charset "UTF-8";
+
+.table {
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    thead {
+      background-color: $dark-color;
+      color: $white-color;
+      tr {
+        th {
+          border: 1px solid $white-color;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          border: 1px solid $dark-color;
+        }
+      }
+    }
+
+    .name-cell {
+      width: 6rem;
+      text-align: center;
+    }
+    .age-cell {
+      width: 3.2rem;
+      text-align: right;
+    }
+    .birth-cell {
+      width: 9.6rem;
+      text-align: center;
+    }
+  }
+}

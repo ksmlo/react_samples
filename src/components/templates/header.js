@@ -5,7 +5,6 @@ import ClassNames from "classnames"
 import { ROUTE } from "../route/index"
 
 export const Header = withRouter(({ location }) => {
-  console.log(location)
   return (
     <header>
       <ul>

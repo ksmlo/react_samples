@@ -1,1 +1,18 @@
 @charset "UTF-8";
+
+.routing {
+  .routing-container {
+    display: flex;
+    ul {
+      width: 12rem;
+      li {
+        margin-bottom: 1rem;
+        a {
+          font-size: 1.8rem;
+          font-weight: bold;
+          border-bottom: 1.5px solid $dark-color;
+        }
+      }
+    }
+  }
+}

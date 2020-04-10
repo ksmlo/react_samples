@@ -12,7 +12,12 @@ export const Main = props => {
         <Header />
         <Switch>
           {ROUTE.map((pathList, i) => (
-            <Route exact path={pathList.path} component={pathList.component} />
+            <Route
+              key={i}
+              exact={!!pathList.exact}
+              path={pathList.path}
+              component={pathList.component}
+            />
           ))}
         </Switch>
       </div>

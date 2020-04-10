@@ -35,7 +35,7 @@ export const Modal = () => {
   return (
     <section className="modal-section">
       <h1>モーダル</h1>
-      <div class="modal-btn" onClick={() => changeShow(true)}>
+      <div className="modal-btn" onClick={() => changeShow(true)}>
         OPEN
       </div>
       <ModalComponent isShow={showModal} onHide={() => changeShow(false)} />

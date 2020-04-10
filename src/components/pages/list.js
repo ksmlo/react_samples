@@ -35,11 +35,15 @@ export const List = () => {
       <div>
         {Messages.map((message, i) => {
           return (
-            <div>
+            <div key={i}>
               <span>{message.title}</span>
               <ul>
                 {message.contents.map((li, j) => {
-                  return <li className={li.cls}>{li.msg}</li>
+                  return (
+                    <li key={j} className={li.cls}>
+                      {li.msg}
+                    </li>
+                  )
                 })}
               </ul>
             </div>

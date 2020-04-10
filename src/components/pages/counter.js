@@ -30,7 +30,7 @@ const countReducer = (state, action) => {
   }
 }
 
-const DiffCounter = () => {
+export const DiffCounter = () => {
   const [state, dispatch] = useReducer(countReducer, { count: 0 })
   return (
     <div className="component-area">

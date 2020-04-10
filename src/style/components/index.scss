@@ -15,9 +15,29 @@ body {
   }
 }
 
-section{
-  .title{
+section {
+  .title {
     font-size: 2.2rem;
     border-bottom: 1px solid $dark-color;
+  }
+}
+
+.timer-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: $white-color;
+  span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 18rem;
+    height: 4rem;
+    color: $dark-color;
+    font-size: 4rem;
+    font-weight: bold;
   }
 }

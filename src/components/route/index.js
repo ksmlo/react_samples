@@ -1,5 +1,3 @@
-import React from "react"
-
 import { Index } from "../pages/index"
 import { Switch } from "../pages/switch"
 import { Counter } from "../pages/counter"

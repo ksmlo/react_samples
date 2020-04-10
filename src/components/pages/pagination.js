@@ -63,6 +63,8 @@ export const paginationReducer = (state, action) => {
       return { page: state.page - 1 }
     case "PAGINATION_MOVE":
       return { page: action.page }
+    default:
+      return state
   }
 }
 

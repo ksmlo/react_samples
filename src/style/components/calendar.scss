@@ -1,1 +1,18 @@
 @charset "UTF-8";
+
+.calendar {
+  .calendar-wrapper {
+    display: flex;
+    margin-bottom: 1rem;
+    > span {
+      margin: 0 1rem;
+    }
+  }
+  .attention {
+    font-size: 1.4rem;
+    color: $red-color;
+    &:before {
+      content: "※";
+    }
+  }
+}

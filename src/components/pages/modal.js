@@ -21,7 +21,10 @@ export const ModalComponent = props => {
           </div>
         </div>
       </div>
-      <div className={ClassNames("modal-bg", { show: props.isShow })}></div>
+      <div
+        className={ClassNames("modal-bg", { show: props.isShow })}
+        onClick={() => props.onHide()}
+      ></div>
     </>,
     body
   )

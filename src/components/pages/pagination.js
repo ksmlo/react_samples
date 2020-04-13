@@ -2,7 +2,7 @@ import React, { useReducer } from "react"
 import { range } from "lodash"
 import ClassNames from "classnames"
 
-const PaginationComponent = props => {
+export const PaginationComponent = props => {
   return (
     <ul>
       <li

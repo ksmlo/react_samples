@@ -1,1 +1,66 @@
 @charset "UTF-8";
+
+.input-container {
+  display: flex;
+  height: 2rem;
+  input {
+    width: 10rem;
+    height: 100%;
+    border-radius: 1rem;
+  }
+  .btn {
+    height: 100%;
+    border-radius: 1rem;
+    padding: 0.3rem 1rem;
+    margin-left: 1rem;
+    font-weight: bold;
+    background-color: $dark-color;
+    color: $white-color;
+    &:hover {
+      background-color: rgba($dark-color, 0.8);
+    }
+  }
+}
+
+.memo-list {
+  width: 30rem;
+  padding: 0;
+  li {
+    display: flex;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px dotted $dark-color;
+    span {
+      cursor: pointer;
+    }
+    .material-icons {
+      margin-left: auto;
+    }
+  }
+}
+
+.input-modal {
+  display: flex;
+  width: 20rem;
+  left: calc((16% -4rem) / 2);
+  padding: 1rem;
+  &.show {
+    top: 18rem;
+  }
+  input {
+    width: 10rem;
+    height: 100%;
+    border-radius: 1rem;
+  }
+  .btn {
+    height: 100%;
+    border-radius: 1rem;
+    padding: 0.3rem 1rem;
+    margin-left: 1rem;
+    font-weight: bold;
+    background-color: $dark-color;
+    color: $white-color;
+    &:hover {
+      background-color: rgba($dark-color, 0.8);
+    }
+  }
+}

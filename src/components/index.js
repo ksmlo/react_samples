@@ -8,7 +8,7 @@ import { ROUTE } from "./route/index"
 
 export const Main = props => {
   const [now, setNow] = useState(new Date())
-  const openTime = new Date(2020, 3, 12, 20)
+  const openTime = new Date(2020, 3, 13, 20)
   const isBeforeOpen = dayjs(now).isAfter(openTime)
   const animationId = useRef()
   useEffect(() => {

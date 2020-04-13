@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useReducer } from "react"
 import {
   Switch,
   Route,
@@ -7,13 +7,31 @@ import {
   useRouteMatch,
   useParams,
 } from "react-router-dom"
-import { find, get } from "lodash"
+import { find, get, range } from "lodash"
 
+import {
+  PaginationComponent,
+  paginationReducer,
+  initialPaginationState,
+} from "./pagination"
 import { DiffCounter } from "./counter"
+
+const RoutingPagination = () => {
+  const [state, action] = useReducer(paginationReducer, initialPaginationState)
+  return (
+    <div className="pagination">
+      <PaginationComponent list={range(3)} state={state} action={action} />
+    </div>
+  )
+}
 
 const testRouting = [
   { name: "挨拶", path: "greeting", component: () => <div>こんにちは</div> },
-  { name: "ニュース", path: "news", component: () => <div>ニュースです</div> },
+  {
+    name: "ルーティング",
+    path: "routing",
+    component: () => <RoutingPagination />,
+  },
   {
     name: "カウント",
     path: "count",
@@ -39,20 +57,20 @@ export const Routing = withRouter(() => {
       <h1>ルーティング</h1>
       <span>下記の文字をクリックしてください</span>
       <div className="routing-container">
-      <ul>
-        {testRouting.map((li, i) => {
-          return (
-            <li key={i}>
-              <Link to={`${match.url}/${li.path}`}>{li.name}</Link>
-            </li>
-          )
-        })}
-      </ul>
-      <Switch>
-        {testRouting.map((li, i) => (
-          <Route key={i} path={`${match.path}/:id`} component={Container} />
-        ))}
-      </Switch>
+        <ul>
+          {testRouting.map((li, i) => {
+            return (
+              <li key={i}>
+                <Link to={`${match.url}/${li.path}`}>{li.name}</Link>
+              </li>
+            )
+          })}
+        </ul>
+        <Switch>
+          {testRouting.map((li, i) => (
+            <Route key={i} path={`${match.path}/:id`} component={Container} />
+          ))}
+        </Switch>
       </div>
     </section>
   )

@@ -1,4 +1,4 @@
-import React, { useReducer } from "react"
+import React, { useReducer, useRef, useEffect } from "react"
 import ReactDOM from "react-dom"
 import ClassNames from "classnames"
 import { reject, clone, concat } from "lodash"
@@ -10,6 +10,8 @@ const initialState = {
   modalInputValue: "",
   modalId: null,
 }
+
+const keyEnterEvent = (e, fn) => e.key === "Enter" && fn()
 
 const memoReducer = (state, action) => {
   let currentList = clone(state.list)
@@ -52,6 +54,9 @@ export const Input = props => {
         onChange={e =>
           props.action({ type: "CHANGE_VALUE", value: e.target.value })
         }
+        onKeyDown={e =>
+          keyEnterEvent(e, () => props.action({ type: "ADD_LIST" }))
+        }
       />
       <div className="btn" onClick={() => props.action({ type: "ADD_LIST" })}>
         登録
@@ -62,7 +67,7 @@ export const Input = props => {
 
 export const MemolizeList = props => {
   return (
-    <ul>
+    <ul className="memo-list">
       {props.state.list.map((li, i) => {
         return (
           <li key={i}>
@@ -91,36 +96,47 @@ export const MemolizeList = props => {
 }
 
 export const InputModal = props => {
+  const input = useRef()
   const body = document.getElementsByTagName("body")[0]
+
+  useEffect(() => {
+    if (!!props.state.modalId && !!input.current) input.current.focus()
+  }, [props.state.modalId])
   return ReactDOM.createPortal(
     <>
-      <div className={ClassNames("modal", { show: !!props.state.modalId })}>
-        <div className="input-modal">
-          <input
-            type="text"
-            value={props.state.modalInputValue}
-            onChange={e =>
-              props.action({
-                type: "CHANGE_MODAL_VALUE",
-                value: e.target.value,
-              })
-            }
-          />
-          <div
-            className="btn"
-            onClick={e => props.action({ type: "CHANGE_LIST" })}
-          >
-            登録
-          </div>
-          <i
-            className="material-icons"
-            onClick={() =>
-              props.action({ type: "DISPLAY_MODAL", id: null, value: "" })
-            }
-          >
-            close
-          </i>
+      <div
+        className={ClassNames("modal input-modal", {
+          show: !!props.state.modalId,
+        })}
+      >
+        <input
+          ref={input}
+          type="text"
+          value={props.state.modalInputValue}
+          onChange={e =>
+            props.action({
+              type: "CHANGE_MODAL_VALUE",
+              value: e.target.value,
+            })
+          }
+          onKeyDown={e =>
+            keyEnterEvent(e, () => props.action({ type: "CHANGE_LIST" }))
+          }
+        />
+        <div
+          className="btn"
+          onClick={e => props.action({ type: "CHANGE_LIST" })}
+        >
+          登録
         </div>
+        <i
+          className="material-icons"
+          onClick={() =>
+            props.action({ type: "DISPLAY_MODAL", id: null, value: "" })
+          }
+        >
+          close
+        </i>
       </div>
       <div
         className={ClassNames("modal-bg", { show: !!props.state.modalId })}

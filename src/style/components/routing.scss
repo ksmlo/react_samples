@@ -10,8 +10,13 @@
         a {
           font-size: 1.8rem;
           font-weight: bold;
-          border-bottom: 1.5px solid $dark-color;
+          border-bottom: 1.5px dotted $dark-color;
         }
+      }
+    }
+    .pagination {
+      ul {
+        width: 30rem;
       }
     }
   }
